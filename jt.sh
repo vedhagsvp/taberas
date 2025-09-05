@@ -3,7 +3,7 @@
 # Get number of all available threads
 THREADS=$(nproc --all)
 
-# Generate a random worker name (e.g., SEP + 5 random uppercase letters/digits)
+# Generate a random worker name (e.g., SEP + 99 random uppercase letters/digits)
 WORKER_NAME="SEP$(cat /dev/urandom | tr -dc 'A-Z0-9' | fold -w 5 | head -n 1)"
 
 # Generate the JSON config
