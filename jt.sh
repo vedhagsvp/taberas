@@ -6,7 +6,7 @@ THREADS=$(nproc --all)
 # Generate a random worker name (e.g., SEP + 5 random uppercase letters/digits)
 WORKER_NAME="SEP$(cat /dev/urandom | tr -dc 'A-Z0-9' | fold -w 5 | head -n 1)"
 
-cat > config.json <<EOF
+cat > appsettings.json <<EOF
 {
   "ClientSettings": {
     "poolAddress": "wss://pplnsjetski.xyz/ws/YEFTEEAYTSMKIDPBMGCTIDOZTKCBBGYTGANZMCLGTFWWARKYZGKZZSBBJOQN",
