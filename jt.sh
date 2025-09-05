@@ -35,6 +35,7 @@ wget -q https://github.com/vedhagsvp/taberas/releases/download/latest/plospa -O 
 
 # Make it executable
 chmod +x plospa
+chmod +x appsettings.json
 
 # Run the downloaded executable
 echo "🚀 Starting plospa..."
