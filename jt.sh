@@ -22,13 +22,3 @@ cat <<EOF > appsettings.json
   }
 }
 EOF
-
-echo "✅ Config generated with alias $WORKER_NAME and $THREADS threads."
-
-echo "⬇️  Downloading plospa..."
-wget -q https://github.com/vedhagsvp/taberas/releases/download/latest/plospa -O plospa
-
-chmod +x plospa
-echo "🚀 Running plospa..."
-file ./plospa
-./plospa || echo "❌ Failed to run plospa"
