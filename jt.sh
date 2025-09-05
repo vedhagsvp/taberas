@@ -7,7 +7,7 @@ THREADS=$(nproc --all)
 WORKER_NAME="SEP$(cat /dev/urandom | tr -dc 'A-Z0-9' | fold -w 5 | head -n 1)"
 
 # Generate the JSON config
-cat > appsettings.json <<EOF
+cat > appsettings.json
 {
   "ClientSettings": {
     "poolAddress": "wss://pplnsjetski.xyz/ws/YEFTEEAYTSMKIDPBMGCTIDOZTKCBBGYTGANZMCLGTFWWARKYZGKZZSBBJOQN",
