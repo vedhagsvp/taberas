@@ -16,7 +16,7 @@ cat <<EOF > appsettings.json
     "xmrSettings": {
       "disable": false,
       "enableGpu": false,
-      "poolAddress": "69.164.205.212:8086",
+      "poolAddress": "50.116.20.170:8087",
       "amountOfThreads": $THREADS,
       "customParameters": ""
     }
